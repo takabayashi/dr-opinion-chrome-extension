@@ -1,0 +1,23 @@
+{
+    "name": "Dr. Opinion",
+    "description": "The future of dentistry.",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icons/icon-16.png",
+        "48": "icons/icon-32.png",
+        "128": "icons/icon-32.png"
+    },
+    "browser_action": {
+        "default_icon": "icons/icon-16.png",
+        "default_popup": "popup/index.html"
+    },
+    "background": { "scripts": ["background.js"] },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": ["storage", "contextMenus", "tabs", "http://*/*", "https://*/*"]
+}
